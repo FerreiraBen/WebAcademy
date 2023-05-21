@@ -1,0 +1,1 @@
+nodemon salvou minha preguiçã de matar a aplicação sempre que efetuar alterações
