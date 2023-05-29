@@ -1,0 +1,57 @@
+/* CSS inicial */
+body {
+    font-family: Arial, Courier, monospace;
+}
+
+
+img {
+    width: 100px;
+    height: 100px;
+    margin-inline: auto;
+}
+
+.text {
+    text-align: justify;
+}
+
+
+
+.title {
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.container {
+    margin-top: 40px;
+    margin-left: 200px;
+    margin-right: 200px;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 100px;
+    
+}
+
+.info {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    width: 150px;
+}
+
+
+
+
+
+    /* do not edit this footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee;
+}

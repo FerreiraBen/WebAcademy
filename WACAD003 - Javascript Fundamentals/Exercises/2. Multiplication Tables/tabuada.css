@@ -1,0 +1,159 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0px;
+
+    font-family: sans-serif;
+    font-weight: 300;
+}
+ .content p{
+    background-color: rgb(245, 245, 245);
+    border-radius: 15px;
+    text-align: center;
+    width: 100px;
+ }
+
+.tabuada1{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background-color: aquamarine;
+    border-radius: 15px;
+    border: 3px solid black;
+
+    padding: 10px 15px;
+    width: 100px;
+
+}
+
+.tabuada2{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(200, 255, 127);
+    border-radius: 15px;
+    border: 3px solid black;
+
+    padding: 10px 15px;
+    width: fit-content;
+
+}
+
+.tabuada3{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(251, 36, 255);
+    border-radius: 15px;
+    border: 3px solid black;
+
+    padding: 10px 15px;
+    width: fit-content;
+
+}
+
+
+.tabuada4{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(212, 255, 185);
+    border-radius: 15px;
+    border: 3px solid black;
+
+    padding: 10px 15px;
+    width: fit-content;
+
+}
+
+
+.tabuada5{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(249, 79, 79);
+    border-radius: 15px;
+    border: 3px solid black;
+
+    padding: 10px 15px;
+    width: fit-content;
+
+}
+
+
+.tabuada6{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(150, 92, 204);
+    border-radius: 15px;
+    border: 3px solid black;
+
+    padding: 10px 15px;
+    width: fit-content;
+
+}
+
+
+.tabuada7{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(255, 210, 127);
+    border-radius: 15px;
+    border: 3px solid black;
+
+    padding: 10px 15px;
+    width: fit-content;
+
+}
+
+
+.tabuada8{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(189, 123, 138);
+    border-radius: 15px;
+    border: 3px solid black;
+
+    padding: 10px 15px;
+    width: fit-content;
+
+}
+
+.tabuada9{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(221, 232, 129);
+    border-radius: 15px;
+    border: 3px solid black;
+
+    padding: 10px 15px;
+    width: fit-content;
+
+}
+
+.tabuada10{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(67, 84, 194);
+    border-radius: 15px;
+    border: 3px solid black;
+
+    padding: 10px 15px;
+    width: fit-content;
+
+}
+
+
+
+img {
+    width: 40px;
+    height: 40px;
+}
+
+

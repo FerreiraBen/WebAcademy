@@ -1,0 +1,3 @@
+Crie uma aplicação Web em que o usuário informe o número de tabuadas que ele quer e o sistema imprima as tabuadas customizadas (utilize propriedades CSS).
+
+Máximo de 10 Tabuadas.

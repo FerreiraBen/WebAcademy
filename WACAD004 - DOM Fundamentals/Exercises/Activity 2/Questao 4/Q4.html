@@ -1,0 +1,120 @@
+<!-- HTML Questao 4 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript + DOM</title>
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme:300|Monoton" rel="stylesheet">
+    <link rel="stylesheet" href="Q4.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Lista da Festa</h1>
+        </div>
+        <div class="list">
+            <div class="list--header">
+                <input id="userinput" type="text" placeholder="...">
+                <button id="enter">Enter!</button>
+            </div>
+            <ul id="item--List">
+                <li>
+                    <span>Chocolate</span>
+                    <button class="delete--button">Delete</button>
+                </li>
+                <li><span>Balões</span>
+                    <button class="delete--button">Delete</button>
+                </li>
+                <li>
+                    <span>Cupcake</span>
+                    <button class="delete--button">Delete</button>
+                </li>
+                <li>
+                    <span>Bolo de Aniversário</span>
+                    <button class="delete--button">Delete</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // A. Adicione um evento de click (DELETE) para os botões <button class= ‘delete--button'>
+        // #DICA: não esquecer de observar o nó pai e o nó filho da lista <ul> <li>
+            var buttons_del = document.getElementsByClassName("delete--button");
+            //console.log(buttons_del);
+
+            for(let i=0; i<buttons_del.length; i++){
+                buttons_del[i].addEventListener('click', function(event) {
+                    var element = event.target.parentNode;
+                    if(element.tagName == "LI") element.remove();
+                });
+            }
+
+        // B.  Adicione evento para criar novos objetos na lista. Observação: cada elemento deve
+        //ser criado com seu respectivo botão DELETE, conforme HTML acima.
+        //#DICA: não esquecer que cada botão tem seu evento de DELETE
+
+        /*<li>
+            <span>Cupcake</span>
+            <button class="delete--button">Delete</button>
+        </li>
+                */
+
+        document.getElementById("enter").addEventListener('click', function(event){
+            var text          = event.target.previousElementSibling.value;
+            if(text.trim().length > 0){
+                if(/\d+/g.test(text.trim())){
+                    window.alert("O item digitado não pode conter números!");
+                } else{
+                    var inputtext     = document.createTextNode(text.trim());
+                    var spanNode      = document.createElement("span");
+
+                    spanNode.appendChild(inputtext);
+
+                    var buttonText   = document.createTextNode("DELETE");
+                    var deleteButton = document.createElement("button");
+
+                    deleteButton.appendChild(buttonText);
+
+                    deleteButton.setAttribute("class","delete--button");
+
+                    deleteButton.addEventListener('click', function(event) {
+                            var element = event.target.parentNode;
+                            if(element.tagName == "LI") element.remove();
+                        });
+
+                    var li_list = document.createElement("li");
+                    li_list.appendChild(spanNode);
+                    li_list.appendChild(deleteButton);
+                    li_list.addEventListener('click', function(event) {
+                        event.target.setAttribute("class","done");
+                    });
+
+                    document.getElementById("item--List").appendChild(li_list);
+                }
+            }
+
+            event.target.previousElementSibling.value = "";
+
+        });
+
+
+        // C. Adicione um evento que quando o usuário clicar sobre o elemento da lista <li>, seja
+        // adicionada a classe ‘.done’ do CSS. 
+
+        var lista = document.querySelector("#item--List");
+        var lis   = lista.querySelectorAll("li");
+
+        for(let i=0; i<lis.length; i++){
+            lis[i].addEventListener('click', function(event) {
+                event.target.setAttribute("class","done");
+            });
+        }
+
+        // D. E. (ajustadas acima)
+
+    </script>
+</body>
+
+</html>

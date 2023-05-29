@@ -1,0 +1,17 @@
+/* CSS Questao 1 */
+.container {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-template-rows: 10em 10em;
+    gap: 1%;
+    background-color: AliceBlue;
+    margin: 2em;
+    padding: 2em;
+}
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    font-size: 3em;
+}

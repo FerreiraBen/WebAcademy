@@ -1,0 +1,3 @@
+Crie um questionário com 5 perguntas para responder com apenas duas opções de respostas.
+
+Quando o usuário finalizar o formulário e clicar no botão calcular nota, o sistema deverá informar a nota do usuário com base no número de acertos.

@@ -1,0 +1,7 @@
+Utilizando formatação de elementos
+Crie uma página Web com um paragrafo de 10 linhas sobre a história/propriedades do HTML.
+
+Dentro deste paragrafo utilize todas as tags de formatação. Utilize cada tag pelo menos uma vez. Sendo que:
+
+1)Deverá usar cada tag sozinha para formatar um trecho do paragrafo.
+2)Deverá combinar duas ou mais tags para formatar o mesmo texto mais de uma vez.

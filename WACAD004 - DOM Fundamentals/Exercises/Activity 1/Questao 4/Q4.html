@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Q4</title>
+    <link rel="stylesheet" href="Q4.css">
+
+</head>
+
+<body>
+    <!-- HTML Questão 4 -->
+    <div class="estufa">
+        <ul class="frutas">
+            <li>Abacate</li>
+            <li>Banana</li>
+            <li>Caqui</li>
+            <li>Laranja</li>
+            <li>Melão</li>
+        </ul>
+        <ul class="verduras">
+            <li>Aipo</li>
+            <li>Alface</li>
+            <li>Brócolis</li>
+            <li>Couve</li>
+            <li>Espinafre</li>
+        </ul>
+        <ul class="legumes">
+            <li>Abóbora</li>
+            <li>Batata</li>
+            <li>Cenoura</li>
+            <li>Mandioca</li>
+        </ul>
+        <ul class="flores">
+            <li>Acácia</li>
+            <li>Flor de Lótus</li>
+            <li>Rosa Branca</li>
+        </ul>
+    </div>
+
+
+    <script>
+        // A. Selecione o elemento <div class=‘estufa’> com ‘querySeletor()’
+        var estufa = document.querySelector(".estufa");
+        console.log(estufa);
+
+        // B. Selecione o elemento <ul class=‘verduras’> a partir de ‘<div class=‘estufa’>
+        var verduras = estufa.querySelector(".verduras");
+        console.log(verduras);
+
+        // C.Selecione NodeList de <li class=‘verduras’> com ‘querySelectorAll’, iniciando a
+        //partir de ‘.verduras’
+        var verduras_li = verduras.querySelectorAll("li");
+        console.log(verduras_li);
+
+        // D. A partir da classe frutas imprima os filhos utilizando a propriedade ‘children’
+        var frutas = estufa.querySelector(".frutas");
+        var frutas_children = frutas.children;
+        console.log(frutas_children);
+
+        // E. Imprima o conteúdo verdura ‘Caqui’
+        // Nao entendi muito bem. Caqui nao esta em verdura.
+
+        // F. a partir de ‘Acácia’, selecione o elemento <ul class= ‘flores’> 
+        
+        var flor_acacia = estufa.querySelector(".flores").firstChild.nextSibling;
+        console.log(flor_acacia.textContent);
+
+        var flores = flor_acacia.parentElement;
+        console.log(flores.getAttribute("class"));
+
+        // G. a partir de ‘Rosa Branca’ , selecione o elemento <di class= ‘estufa’ >
+        var rosa_branca = estufa.querySelector(".flores").lastChild.previousSibling;
+        console.log(rosa_branca.textContent);
+
+        var estufa2 = rosa_branca.parentElement.parentElement;
+        console.log(estufa2.getAttribute("class"));
+        
+        // H. Selecione o conteúdo ‘Cenoura’ a partir do elemento <li>Batata</li>
+        var batata = estufa.querySelector(".legumes").firstChild.nextSibling.nextSibling.nextSibling;
+        console.log(batata.textContent);
+        var cenoura = batata.nextSibling.nextSibling;
+        console.log(cenoura.textContent);
+
+        // I. Selecione o conteúdo ‘Abóbora’ a partir do elemento <li>Batata</li>
+        var abobora = batata.previousSibling.previousSibling;
+        console.log(abobora);
+
+        // J. Selecione o conteúdo ‘Mandioca’ a partir do elemento <li>Batata</li>
+        var mandioca = batata.parentElement.lastChild.previousSibling;
+        console.log(mandioca);
+
+        
+
+
+    </script>
+
+
+</body>
+
+</html>

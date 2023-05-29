@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Questionário</title>
+</head>
+
+<body>
+    <form id="quiz">
+        <p>1) Questao 1</p>
+        <input type="radio" name="q1" value="a">
+        a) Option 1
+        <br>
+        <input type="radio" name="q1" value="b">
+        b) Option 2
+
+        <br><br>
+
+        <p>2) Questao 2</p>
+        <input type="radio" name="q2" value="a">
+        a) Option 1
+        <br>
+        <input type="radio" name="q2" value="b">
+        b) Option 2
+
+        <br><br>
+
+        <p>3) Questao 3</p>
+        <input type="radio" name="q3" value="a">
+        a) Option 1
+        <br>
+        <input type="radio" name="q3" value="b">
+        b) Option 2
+
+        <br><br>
+
+        <p>4) Questao 4</p>
+        <input type="radio" name="q4" value="a">
+        a) Option 1
+        <br>
+        <input type="radio" name="q4" value="b">
+        b) Option 2
+
+        <br><br>
+
+        <p>5) Questao 3</p>
+        <input type="radio" name="q5" value="a">
+        a) Option 1
+        <br>
+        <input type="radio" name="q5" value="b">
+        b) Option 2
+
+        <br><br>
+
+        <button type="button" onclick="calcularNota()">Calcular Nota</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcularNota() {
+            var respostas = document.forms["quiz"];
+            var acertos = 0;
+
+            if (respostas["q1"].value === "b") {
+                acertos++;
+            }
+
+            if (respostas["q2"].value === "a") {
+                acertos++;
+            }
+
+            if (respostas["q3"].value === "a") {
+                acertos++;
+            }
+
+            if (respostas["q4"].value === "a") {
+                acertos++;
+            }
+
+            if (respostas["q5"].value === "a") {
+                acertos++;
+            }
+
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "Você acertou " + acertos + " de 5 perguntas.";
+        }
+    </script>
+</body>
+
+</html>

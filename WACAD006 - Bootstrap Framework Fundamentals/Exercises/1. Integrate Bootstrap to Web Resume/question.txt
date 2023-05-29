@@ -1,0 +1,2 @@
+Faça a integração do Boostrap ao projeto do currículo online habilitando no mesmo a responsividade.
+

@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Q2</title>
+        <link rel="stylesheet" href="Q2.css">
+
+    </head>
+    <body>
+        <!-- HTML Questão 2 -->
+        <p>
+            Mary Kenneth Keller foi uma freira e também a primeira mulher a
+                    conquistar um doutorado em Ciências da Computação.
+        </p>
+        <p>
+            A britânica Ada Lovelace foi a primeira programadora da história,
+                    criando o primeiro algoritmo capaz de ser processado por uma
+                    máquina.
+        </p>
+        <p>
+            Grace Hopper é que foi por causa dela que começamos a chamar as
+                falhas de “bug”.
+        </p>
+        <p>
+            A Carol Shaw foi a primeira mulher a desbravar o universo dos
+                games, na década de 70.
+        </p>
+
+
+        <script>
+            //A. Crie um arquivo Questao2.html com o CSS acima e coloque quatro elementos p
+            //como acima: Obtenha o primeiro parágrafo usando querySelector() e depois
+            //getElementByTagName().
+            //
+            //
+            console.log("ITEM A:")
+
+            // P QuerySelector
+            var p_qs = document.querySelector("p");
+            // P TagName
+            var p_tn = document.getElementsByTagName("p")[0];
+
+            console.log(p_qs)
+            console.log(p_tn)
+
+
+            //B. Percorra usando loop a nodeList e obtenha o conteúdo de texto de cada parágrafo.
+
+            console.log("ITEM B:")
+
+            var ps = document.getElementsByTagName("p");
+            for(let i=0; i<ps.length; i++){
+                console.log(ps[i]);
+            }
+
+
+            //C. No penúltimo elemento da NodeList de (p) modifique seu CSS para: backgroundcolor: ‘blue’.
+            
+            console.log("ITEM C:")
+
+            var ps = document.getElementsByTagName("p");
+            var penult_p = ps[ps.length - 2];
+
+            penult_p.style.backgroundColor = "blue";
+
+            
+            //D. Definir id e atributo de classe para todos os parágrafos usando diferentes métodos
+            //de configuração de atributo.
+
+            console.log("ITEM D:")
+
+
+            var ids = ["one", "two", "three", "four"];
+            var class_name = "paragraph";
+
+            var ps = document.querySelectorAll("p");
+            
+            for (let i = 0; i < ps.length; i++) {
+                const element = ps[i];
+                ps[i].setAttribute("id",ids[i]);
+                ps[i].setAttribute("class",class_name);
+                
+            }
+
+            console.log(ps);
+
+
+            //E. Modifique os estilos CSS para 
+            //{font-family: ‘Monospace’; 
+            //font-size: 14pt; 
+            //borda: ‘8px
+            //solid pink’}.
+
+            console.log("ITEM E:")
+
+            var ps = document.querySelectorAll("p");
+            for (let i = 0; i < ps.length; i++) {
+                
+                ps[i].style.setProperty("font-family", "Monospace");
+                ps[i].style.setProperty("font-size", "14pt");
+                ps[i].style.setProperty("border", "8px solid pink");
+                ps[i].style.setProperty("font-family", "Monospace");
+  
+            }
+            console.log(ps);
+
+
+        </script>
+    
+
+    </body>
+</html>

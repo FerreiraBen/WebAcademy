@@ -1,0 +1,4 @@
+Para essa atividade, é necessário observar os tópicos abordados na Aula 01. 
+O nome dos arquivos gerados, devem ser nomeados como exemplo, Q1.html | Q1.css | Q1.js
+
+Os aquivos devem ser zipados (.zip) e enviados até a data limite.

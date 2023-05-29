@@ -1,0 +1,5 @@
+Crie um objeto círculo com os atributos raio e os métodos que calculem os dados informados pelo usuário:
+
+•Área
+•Circunferência
+•Se um ponto X1,Y1 está dentro, na circunferência ou fora.

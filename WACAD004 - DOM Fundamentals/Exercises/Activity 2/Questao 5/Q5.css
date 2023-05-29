@@ -1,0 +1,23 @@
+/* CSS Questaoo 5 */
+.btn,
+.remove-btn {
+    text-transform: capitalize;
+    width: 100px;
+    height: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+img {
+    transition: display 0.2ms ease;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.js-hidden {
+    display: none;
+}
+.js-show {
+    display: block;
+}

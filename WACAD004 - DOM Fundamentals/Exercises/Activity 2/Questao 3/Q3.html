@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM</title>
+        <style>
+            .body-data {
+                border: #3CB371 2px solid;
+                background-color: #03a9f400;
+                text-align: left;
+                padding-left: 20px;
+                padding-bottom: 20px;
+                height: auto;
+                width: auto;
+            }
+
+            .resultText {
+                margin: 0 0 3px 0;
+                padding: 0px;
+                display: block;
+                font-weight: bold;
+            }
+
+            .heading {
+                font-weight: bold;
+                border-bottom: 2px solid #708090;
+                font-size: 15px;
+                width: 98%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="body-data">
+            <div class="heading">
+                <h2> Evento com 'blur' </h2>
+                <span>Click no input para disparar o Evento </span>
+            </div>
+            <div class="resultText">
+                </br>
+                <p> Campo de Validação </p>
+                <textarea id="myText" rows="4" cols="50"></textarea>
+                <p id="result"></p>
+            </div>
+        </div>
+
+
+        <script>
+            // A. Adicione um evento ‘blur’ no campo <textarea> que faça uma verificação que
+            //aceite somente texto. Se o usuário inserir números, seja sozinho ou junto com a
+            //string mude o background para vermelho, caso tenha somente texto, mude para
+            //verde.
+
+            let textarea = document.getElementById("myText");
+            textarea.addEventListener("blur", (event)=>{
+
+                var texto = event.target.value;
+                console.log(texto);
+                if(/^[a-zA-Z]+$/.test(texto)){
+                    event.target.style.backgroundColor = "green";
+                } else {
+                    event.target.style.backgroundColor = "red";
+                }
+                console.log(event.target.style.backgroundColor);
+            });
+
+            // B. Escreva no id= ‘result’ os seguintes feedbacks, exemplo:
+            // [abc123] -> “Input contém números”
+            // [abcd] -> “Input não contém número”,
+            // [ ] -> “Input está vazio”
+
+            let result = document.getElementById("result");
+            textarea.addEventListener("change", (event)=>{
+                if(/^$/gm.test(event.target.value)){
+                    result.innerText = "Input está vazio";
+                } else if(/^[a-zA-Z]+$/.test(event.target.value)){
+                    result.innerText = "Input nao contem numeros";
+                } else {
+                    result.innerText = "Input contem numeros e/ou espaços";
+                }
+            });
+
+
+            // C. Adicione um evento que não permita que o usuário realizar a ação CTRL+V na <textarea>.
+
+            textarea.addEventListener('keydown', (event) => {
+                if (event.ctrlKey && event.key === 'v') {
+                    event.preventDefault();
+                }
+            });
+
+
+        </script>
+
+
+    </body>
+
+</html>

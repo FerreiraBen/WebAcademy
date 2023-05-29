@@ -1,0 +1,5 @@
+CSS - Atividade 3
+Atividade deve ser entregue em arquivo .ZIP.  Por favor, colocar o nome do aluno no arquivo ZIP. 
+Cada arquivo deve ser nomeado com o número da questão correspondente, por exemplo:
+
+Questão 1 - [Q1.html Q1.css]

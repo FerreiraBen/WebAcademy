@@ -1,0 +1,43 @@
+body {
+    /* complete aqui */
+    width: 60%;
+    background: rgb(243, 186, 167);
+
+    margin: 0 auto;
+}
+p {
+    /* complete aqui */
+    font-family: Arial;
+    font-size: 14px;
+    width: 70%;
+    text-align: left;
+
+    margin-left: 15%;
+}
+li {
+    /* complete aqui */
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-weight: bold 500;
+
+    line-height: 1.4;
+    list-style: none;
+}
+#wrap h1 {
+    /* complete aqui */
+    font-size: 22pt;
+    height: 50%;
+    font-weight: bold;
+    text-align: center;
+
+    font-family: 'Times New Roman', Times, serif;
+}
+.line {
+    border-bottom: black dashed 5px;
+}
+span {
+    /* complete aqui */
+    font-size: 15pt;
+
+    font-weight: 600;
+}

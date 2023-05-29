@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Q5.css">
+    <title>Questao 5</title>
+</head>
+
+<body>
+    <span class='btn'>Visualizar Imagem</span>
+
+
+    <script>
+        // A.
+        var image = document.createElement("img");
+        image.setAttribute("src","cirilo.jpg");
+        image.setAttribute("alt","Cirilo do carrossel rindo todo distorcido");
+        image.setAttribute("class", "js-hidden");
+        document.querySelector(".btn").parentNode.appendChild(image);
+
+        document.querySelector(".btn").addEventListener('click', function(event) {
+                        document.querySelector("img").setAttribute("class","js-show");
+        });
+
+        // B. 
+        document.querySelector("img").addEventListener('click', function(event) {
+                        event.target.setAttribute("class","js-hidden");
+        });
+
+        // C.
+        var removeBtn = document.createElement("span");
+        removeBtn.classList.add("remove-btn");
+        removeBtn.textContent = "Remover Imagem";
+
+        removeBtn.addEventListener('click', function(event) {
+            document.querySelector("img").remove();
+        });
+
+        document.body.appendChild(removeBtn);
+
+    </script>
+</body>
+
+</html>

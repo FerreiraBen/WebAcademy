@@ -1,0 +1,5 @@
+Fundamentos CSS - Atividades 01
+Para essa atividade, é necessário observar os tópicos abordados na Aula 01. 
+O nome dos arquivos gerados, devem ser nomeados como exemplo, Questão1.html Questao1.css. 
+
+Após finalizada, os aquivos devem ser zipados (.zip) e enviados até a data limite.

@@ -1,0 +1,4 @@
+Crie uma página Web que:
+
+Faça uma lista de 3 restaurantes.Para cada restaurante, faça uma descrição de qual o tipo de comida e o preço médio dos pratos.
+Faça uma lista ordenada e uma não ordenada de categoria de filmes. Para cada lista especifique 3 filmes

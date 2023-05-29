@@ -1,0 +1,95 @@
+<!-- HTML Questao 1 -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Q1.css">
+        <title>Document</title>
+    </head>
+<!-- HTML Questao 1 -->
+
+    <body>
+        <div class="container">
+            <div id="divA" class="cell">A</div>
+            <div id="divB" class="cell">B</div>
+            <div id="divC" class="cell">C</div>
+            <div id="divD" class="cell">D</div>
+        </div>
+
+
+        <script>
+            // A. Implemente um evento ‘click’ que alterne a div 'D' entre as cores de fundo
+            // (192,192,192) para (218,165,32).
+
+            const divD = document.getElementById('divD');
+
+            divD.addEventListener('click', function(event) {
+                
+                const backgroundColor = event.target.style.backgroundColor;
+
+                // Verifica se a cor atual é igual a rgb(192,192,192)
+                if (backgroundColor === 'rgb(192, 192, 192)') {
+                    // Se for, altera a cor de fundo para rgb(218,165,32)
+                    event.target.style.backgroundColor = 'rgb(218, 165, 32)';
+                } else {
+                    // Caso contrário, altera a cor de fundo para rgb(192,192,192)
+                    event.target.style.backgroundColor = 'rgb(192, 192, 192)';
+                }
+            });
+
+            // B. Implemente um evento 'mouseover'. A cada movimento do mouse na div
+            // 'C', sua cor de fundo muda de "Blue " para "#00FF00", "#FF4500", "(255,215,0)",
+            // "(211,211,211)" e de volta para ""Blue ".
+
+            const divC = document.getElementById("divC");
+            const colors = ["blue", "#00FF00", "#FF4500", "rgb(255, 215, 0)", "rgb(211, 211, 211)"];
+            let colorIndex = 0;
+
+            divC.addEventListener("mouseover", function(event) {
+                // pega o resto da divisao pelo comprimento do vetor de forma a manter seus valores dentro do
+                // intervalo valido (0 -> len-1)
+                colorIndex = (colorIndex + 1) % colors.length;
+
+                switch(colors[colorIndex]) {
+                    case "blue":
+                        event.target.style.backgroundColor = "blue";
+                    break;
+                    case "#00FF00":
+                        event.target.style.backgroundColor = "#00FF00";
+                    break;
+                    case "#FF4500":
+                        event.target.style.backgroundColor = "#FF4500";
+                    break;
+                    case "rgb(255, 215, 0)":
+                        event.target.style.backgroundColor = "rgb(255, 215, 0)";
+                    break;
+                    case "rgb(211, 211, 211)":
+                        event.target.style.backgroundColor = "rgb(211, 211, 211)";
+                    break;
+                    default:
+                        event.target.style.backgroundColor = "blue";
+                }
+            });
+
+            // C. Implemente dois manipuladores de eventos para mouse na div 'C'.
+            // Quando o ponteiro do mouse entra na área, sua cor de fundo muda para
+            // "vermelho"; ao sair da área, sua cor de fundo muda para "verde".
+
+            // Crei oque houve um typo... Uma vez que o divC já foi usado no item anterior,
+            // farei a questao para o divB.
+            const divB = document.getElementById("divB");
+
+            divB.addEventListener("mouseover", function(event){
+                event.target.style.backgroundColor = "red";
+            });
+            divB.addEventListener("mouseout", function(event){
+                event.target.style.backgroundColor = "green";
+            });
+
+
+        </script>
+    </body>
+</html>

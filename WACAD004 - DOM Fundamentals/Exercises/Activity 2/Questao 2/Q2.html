@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <title>DOM</title>
+    </head>
+<!-- The DOM -->
+
+    <body>
+        <h1>
+            WEB ACADEMY
+        </h1>
+        <div id="container">
+            <div class="content">
+                Introdução ao DOM (document object model)
+            </div>
+        </div>
+    </body>
+
+    <script>
+        // A. Crie um elemento <p> com texto de cor vermelho escrito “Hierarquia de Objetos”
+        let text = document.createTextNode("Hierarquia de Objetos");
+        let p    = document.createElement("p");
+        p.appendChild(text);
+        p.style.color = "red";
+
+        document.getElementById("container").appendChild(p);
+
+
+        // B. Crie um elemento <h3> com texto de cor azul escrito “Windows Object”
+        let text2 = document.createTextNode("Windows Object");
+        let h3    = document.createElement("h3");
+        h3.appendChild(text2);
+        h3.style.color = "blue";
+
+        document.getElementById("container").appendChild(h3);
+
+        // C. Crie uma <div> com borda 2px, solid, black e background: pink. Além disso,
+        // adicione os seguintes filhos:
+        // i. Elemento <h1> que contém “Título da DIV”;
+        // ii. Elemento <p> que contém “Parágrafo da DIV”;
+        let div    = document.createElement("div");
+        div.style.border = "2px solid black";
+        div.style.backgroundColor = "pink";
+
+        let text3 = document.createTextNode("Título da DIV");
+        let h1    = document.createElement("h1");
+        h1.appendChild(text3);
+
+        let text4 = document.createTextNode("Parágrafo da DIV");
+        let p4    = document.createElement("p");
+        p4.appendChild(text4);
+
+        div.appendChild(h1);
+        div.appendChild(p4);
+        document.getElementById("container").appendChild(div);
+
+
+
+
+
+
+
+    </script>
+
+</html>

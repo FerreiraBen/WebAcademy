@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Q3</title>
+        <link rel="stylesheet" href="Q3.css">
+
+    </head>
+    <body>
+        <table>
+            <h1>Intinerário</h1>
+            <thead>
+            <tr>
+             <th>Quando?</th>
+            <th>Para Onde?</th>
+            </tr>
+            </thead>
+            <tbody>
+             <tr>
+            <td>18 de Abril</td>
+            <td>Salvador <abbr title="Bahia">SSA</abbr></td>
+            </tr>
+            <tr>
+            <td>20 de Abril</td>
+            <td >Porto de Galinhas <abbr title="Pernambuco">PE</abbr></td>
+            </tr>
+            <tr>
+            <td>23 de Abril</td>
+            <td>Manaus <abbr title="Amazonas">MAO</abbr></td>
+            </tr>
+            <tr>
+            <td>28 de Abril</td>
+            <td>Presidente Figueiredo <abbr title="Amazonas">PF</abbr></td>
+            </tr>
+            </tbody>
+        </table>
+    
+
+        <script>
+            // A. Faça um JS que crie o estilo CSS conforme o resultado do enunciado.
+            console.log("ITEM A:")
+
+            let tables = document.getElementsByTagName("table");
+            console.log(tables);
+            let header_row  = tables[0].getElementsByTagName("th");
+            console.log(header_row);
+            let rows = tables[0].getElementsByTagName("tr");
+            console.log(rows);
+
+            for(let j = 0; j < rows.length; j++){
+                if(j%2!=0) rows[j].style.backgroundColor = "#ffc";
+            }
+
+
+            // B. Faça um JS que modifique o valor dos elementos que contém “Quando?” para
+            //“Dia” e “Para onde?” para “Local”.
+            console.log("ITEM B:")
+            // header_row[0].innerHTML = "Dia";
+            // header_row[1].innerHTML = "Local"; funcionam tambem
+            header_row[0].innerText = "Dia";
+            header_row[1].innerText = "Local";
+
+        </script>
+
+    </body>
+</html>

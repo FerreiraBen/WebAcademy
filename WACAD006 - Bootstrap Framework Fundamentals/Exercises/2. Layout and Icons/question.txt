@@ -1,0 +1,1 @@
+Utilize a classe container para adaptação do layout, justifique sua escolha, e utilize ao menos 5 ícones nas páginas do projeto. Também deve ser utilizado grids e colunas.

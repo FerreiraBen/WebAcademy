@@ -1,0 +1,43 @@
+<!-- HTML Questão 5 -->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Sobre Mim</title>
+    </head>
+
+    <body>
+        <h1> Sobre Mim </h1>
+        <ul>
+            <li>Nome Completo: <span id="fullname"></span>
+            <li>Idade: <span id="age"></span>
+            <li>Cidade Natal: <span id="hometown"></span>
+        </ul>
+
+
+        <script>
+        //    a. Mude o estilo CSS font-family do elemento <body> para “Arial”
+            document.body.style.fontFamily = "Arial";
+
+
+        //    b. Troque cada um dos elementos <span> por informações fictícias
+            document.getElementById("fullname").innerHTML = "Josias Ben F. Cavalcante";
+            document.getElementById("age").innerHTML = "22";
+            document.getElementById("hometown").innerHTML = "Manaus";
+
+
+        //    c. Adicione uma tag <style> .listItem { color: red; } </style> no <head>
+            document.head.innerHTML += "<style> .listItem { color: red; } </style>"
+            
+        //    d. Via Javascript adicione a classe ‘listItem’ nos elementos <li>
+            var lis = document.getElementsByTagName("li");
+            for (let i = 0; i < lis.length; i++){ lis[i].setAttribute("class", "listItem"); }
+
+
+        </script>
+
+
+    </body>
+
+</html>
