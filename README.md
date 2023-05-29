@@ -32,7 +32,8 @@ To get started with the Web Academy activities, follow these steps:
 
 1. Clone this repository to your local machine using the following command:
 
-git clone https://github.com/your-username/web-academy.git
+git clone https://github.com/FerreiraBen/WebAcademy
+
 
 
 2. Navigate to the specific activity or topic you are interested in.
