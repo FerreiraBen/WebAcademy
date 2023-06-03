@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gerador de Lorem Ipsum</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/script.js" type="module"></script>
+
+</head>
+
+<body>
+  <h1>Gerador de Lorem Ipsum</h1>
+
+  <label for="num-paragraphs">Quantidade de Parágrafos:</label>
+  <input type="number" id="num-paragraphs" min="1" step="1">
+  <button id="btn-generate" onclick="exibeLorem()">Gerar</button>
+
+
+  <p id="output"></p>
+
+  <script>
+    function exibeLorem() {
+      const numParagraphs = parseInt(document.getElementById('num-paragraphs').value);
+
+      let loremText = (() => {
+        let loremText = "";
+        for (let i = 0; i < numParagraphs; i++)
+          loremText += "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis est quis pulvinar luctus. Curabitur iaculis semper nulla, interdum accumsan lorem scelerisque a. Vestibulum in neque in turpis euismod vestibulum ut in magna. Ut fringilla aliquam tincidunt. Morbi lacinia fringilla odio, eget vestibulum nisl auctor semper. Sed sodales tempor dapibus. Fusce congue dignissim ante at hendrerit. Donec rhoncus sodales quam a dapibus. Sed lobortis id augue eu dignissim. Aenean rutrum rhoncus fermentum. Vestibulum hendrerit cursus lectus, maximus scelerisque nunc blandit eu. Suspendisse volutpat mollis commodo. Praesent luctus dolor non pharetra lobortis. Praesent consequat gravida neque in ultricies. <br><br>";
+        return loremText;
+      })();
+
+      document.getElementById('output').innerHTML = "<br><br>" + loremText;
+    }
+  </script>
+
+
+</body>
+
+</html>
