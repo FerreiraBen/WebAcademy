@@ -10,10 +10,10 @@ const logPath = `${process.env.LOG_DIR}/access.log`;
 function logger(tipo: Tipo) {
   return (req: Request, res: Response, next: NextFunction) => {
     if (tipo === 'completo') {
-
       fs.appendFile(
         logPath,
-        `\n${new Date().toISOString()} ${req.url} ${req.method} ${req.httpVersion
+        `\n${new Date().toISOString()} ${req.url} ${req.method} ${
+          req.httpVersion
         } ${req.get('User-Agent')}`,
         function (err) {
           if (err) console.log(err);

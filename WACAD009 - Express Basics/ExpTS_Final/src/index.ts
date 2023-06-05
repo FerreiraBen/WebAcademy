@@ -30,12 +30,14 @@ app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/views`);
 
 // SASS
-app.use(sass({
-  src: `${publicPath}/scss`,
-  dest: `${publicPath}/css`,
-  outputStyle: 'compressed',
-  prefix: '/css',
-}));
+app.use(
+  sass({
+    src: `${publicPath}/scss`,
+    dest: `${publicPath}/css`,
+    outputStyle: 'compressed',
+    prefix: '/css',
+  }),
+);
 
 // LOGs
 app.use(logger('completo'));
@@ -45,8 +47,20 @@ app.use(router);
 
 // ASSETS w/ express.static
 app.use('/css', express.static(`${publicPath}/css`));
-app.use('/js', express.static(`${publicPath}/js`));
+
+app.use('/js', [
+  express.static(`${publicPath}/js`),
+  express.static(`${__dirname}/../node_modules/bootstrap/dist/js`)
+]);
+
 app.use('/img', express.static(`${publicPath}/img`));
+
+app.use('/webfonts',
+  express.static(
+    `${__dirname}/../node_modules/@fortawesome/fontawesome-free/webfonts`,
+  ),
+);
+
 
 
 app.listen(PORT, () => {

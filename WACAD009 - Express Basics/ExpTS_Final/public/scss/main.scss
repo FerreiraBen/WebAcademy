@@ -1,1 +1,14 @@
-@import "./styles.scss"
+@import "./styles.scss";
+@import "./variables.scss";
+
+// FONTAWESOME
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+
+// BOOTSTRAP
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// BOOTSWATCH
+@import "./bootswatch.scss"
+
