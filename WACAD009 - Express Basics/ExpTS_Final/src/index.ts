@@ -4,15 +4,22 @@ import logger from './middlewares/logger';
 import dotenv from 'dotenv';
 import router from './router/router';
 import { engine } from 'express-handlebars';
+import sass from 'node-sass-middleware';
 
+// DOTENV
 dotenv.config();
+
+// ENVALID
 validateEnv();
 
+// EXPRESS
 const app = express();
 
+// DIRs and PORT
 const publicPath = `${process.cwd()}/public`;
 const PORT = process.env.PORT || 3333;
 
+// HANDLEBARS
 app.engine(
   'handlebars',
   engine({
@@ -21,17 +28,26 @@ app.engine(
 );
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/views`);
+
+// SASS
+app.use(sass({
+  src: `${publicPath}/scss`,
+  dest: `${publicPath}/css`,
+  outputStyle: 'compressed',
+  prefix: '/css',
+}));
+
+// LOGs
 app.use(logger('completo'));
+
+// ROUTER
 app.use(router);
 
+// ASSETS w/ express.static
 app.use('/css', express.static(`${publicPath}/css`));
 app.use('/js', express.static(`${publicPath}/js`));
 app.use('/img', express.static(`${publicPath}/img`));
 
-// app.use((req, res, next) => {
-//   console.log('oie');
-//   next();
-// });
 
 app.listen(PORT, () => {
   console.log(`Express app iniciada na porta ${PORT}.`);
