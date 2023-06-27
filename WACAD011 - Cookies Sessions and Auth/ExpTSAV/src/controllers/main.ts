@@ -27,9 +27,19 @@ const createCookie = function (req: Request, res: Response) {
   }
 };
 
+const signup = (req: Request, res: Response) => {
+  if (req.route.methods.get) {
+    res.render('main/signup', {
+      csrf: req.csrfToken(),
+    });
+  }
+};
+
 const login = (req: Request, res: Response) => {
   if (req.route.methods.get) {
-    res.render('main/login');
+    res.render('main/login', {
+      csrf: req.csrfToken(),
+    });
   } else {
     console.log(req.body['user'], req.body['password']);
 
@@ -47,4 +57,13 @@ const logout = (req: Request, res: Response) => {
   res.render('main/ui');
 };
 
-export default { index, about, ui, createCookie, login, logout, clearCookie };
+export default {
+  index,
+  about,
+  ui,
+  createCookie,
+  login,
+  logout,
+  clearCookie,
+  signup,
+};

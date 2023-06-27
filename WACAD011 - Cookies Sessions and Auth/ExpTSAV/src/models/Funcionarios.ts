@@ -41,24 +41,12 @@ export class Funcionarios extends Model {
   endereco!: string;
 
   @AllowNull(false)
-  @Column({
-    type: DataType.STRING,
-  })
-  fone!: string;
-
-  @AllowNull(false)
   @Unique
   @IsEmail
   @Column({
     type: DataType.STRING,
   })
   email!: string;
-
-  @AllowNull(false)
-  @Column({
-    type: DataType.INTEGER,
-  })
-  idade!: number;
 
   @ForeignKey(() => Departamentos)
   @AllowNull(false)

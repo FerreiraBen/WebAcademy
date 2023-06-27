@@ -21,6 +21,12 @@ import logger from './middlewares/logger';
 
 import cookieParser from 'cookie-parser';
 
+import session from 'express-session';
+
+import csurf from 'csurf';
+
+import { uuid } from 'uuidv4';
+
 const models = [VersaoDB, Funcionarios, Departamentos, Projetos, Dependentes];
 
 export class Api {
@@ -85,6 +91,15 @@ export class Api {
       express.static(
         `${__dirname}/../node_modules/@fortawesome/fontawesome-free/webfonts`,
       ),
+    );
+
+    this.server.use(
+      session({
+        genid: () => uuid(), // usamos UUID para gerar os SESSID
+        secret: 'Hi9Cf#mK98',
+        resave: true,
+        saveUninitialized: true,
+      }),
     );
   }
 
