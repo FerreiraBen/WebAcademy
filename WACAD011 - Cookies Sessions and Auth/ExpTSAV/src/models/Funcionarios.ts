@@ -12,6 +12,7 @@ import {
   BelongsTo,
   HasMany,
 } from 'sequelize-typescript';
+
 import { Departamentos } from './Departamentos';
 import { Dependentes } from './Dependentes';
 

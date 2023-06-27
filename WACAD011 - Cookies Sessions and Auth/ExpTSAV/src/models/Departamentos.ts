@@ -7,8 +7,6 @@ import {
   PrimaryKey,
   AllowNull,
   Unique,
-  ForeignKey,
-  HasOne,
   Length,
   HasMany,
 } from 'sequelize-typescript';

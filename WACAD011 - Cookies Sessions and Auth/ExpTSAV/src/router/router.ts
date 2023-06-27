@@ -13,10 +13,13 @@ router.get('/ui', mainController.ui);
 
 // Departamento controller
 router.get('/dept', checkAuth, setLocals, deptController.index);
+
 router.get('/dept/create', checkAuth, setLocals, deptController.create);
 router.post('/dept/create', checkAuth, setLocals, deptController.create);
+
 router.get('/dept/update/:id', checkAuth, setLocals, deptController.update);
 router.post('/dept/update/:id', checkAuth, setLocals, deptController.update);
+
 router.get('/dept/:id', checkAuth, setLocals, deptController.read);
 
 router.get('/dept/del/:id', checkAuth, setLocals, deptController.del);
@@ -28,5 +31,8 @@ router.get('/clear-cookie', mainController.clearCookie);
 router.get('/login', mainController.login);
 router.post('/login', mainController.login);
 router.get('/logout', mainController.logout);
+
+// ___ Controller
+
 
 export default router;

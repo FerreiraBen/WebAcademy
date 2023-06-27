@@ -1,15 +1,19 @@
 import 'reflect-metadata';
 
 import express from 'express';
+
 import router from './router/router';
+
 import { api } from './api-info';
 import { migracoes, MigracaoDB } from './db/migracoes';
 import connection from './db/config';
 import { VersaoDB } from './models/VersaoDB';
+
 import { Funcionarios } from './models/Funcionarios';
 import { Departamentos } from './models/Departamentos';
 import { Projetos } from './models/Projetos';
 import { Dependentes } from './models/Dependentes';
+
 import { error } from 'console';
 import { engine } from 'express-handlebars';
 import sass from 'node-sass-middleware';
@@ -56,6 +60,7 @@ export class Api {
   private async middleware() {
     this.server.use(express.urlencoded({ extended: false }));
     this.server.use(cookieParser());
+    // UNCOMMENT WHEN
     //this.server.use(csurf({ cookie: true }));
     this.server.use(logger('completo'));
 

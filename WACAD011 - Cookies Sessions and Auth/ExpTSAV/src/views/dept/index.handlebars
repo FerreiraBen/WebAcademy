@@ -34,13 +34,16 @@
                 </tr>
               </thead>
               <tbody>
+                {{!-- Para cada departamento em departamentos, gerar linha --}}
                 {{#each departamentos}}
                   <tr class='table-dark'>
                     <th scope='row'> {{name}} </th>
                     <td>{{sigla}}</td>
                     <td>{{opcoes}}</td>
-                    <td><a href='dept/update/{{id}}'>Editar</a>
-                      <a href='dept/del/{{id}}'>Remover</a></td>
+                    <td>
+                      <a href='dept/update/{{id}}'>Editar</a>
+                      <a href='dept/del/{{id}}'>Remover</a>
+                    </td>
                   </tr>
                 {{/each}}
               </tbody>
