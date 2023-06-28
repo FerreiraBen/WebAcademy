@@ -1,5 +1,8 @@
 import { log } from 'console';
 import { Request, Response } from 'express';
+import { Departamentos } from '../models/Departamentos';
+import { Funcionarios } from '../models/Funcionarios';
+
 
 const index = (req: Request, res: Response) => {
   res.render('main/index');
@@ -27,11 +30,27 @@ const createCookie = function (req: Request, res: Response) {
   }
 };
 
-const signup = (req: Request, res: Response) => {
+const signup = async (req: Request, res: Response) => {
+  const departamentos = (await Departamentos.findAll()).map(d => d.toJSON());
   if (req.route.methods.get) {
     res.render('main/signup', {
       csrf: req.csrfToken(),
+      departamentos
     });
+  } 
+  else {
+    const funcionario = req.body;
+    try{
+      await Funcionarios.create(funcionario);
+      res.redirect('/');
+    } catch(e: any) {
+      res.render('main/signup', {
+        csrf: req.csrfToken(),
+        errors: e.errors,
+        funcionario,
+        departamentos
+      });
+    }
   }
 };
 

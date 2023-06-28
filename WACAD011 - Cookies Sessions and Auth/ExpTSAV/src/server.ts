@@ -26,6 +26,7 @@ import session from 'express-session';
 import csurf from 'csurf';
 
 import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 
 const models = [VersaoDB, Funcionarios, Departamentos, Projetos, Dependentes];
 
@@ -67,7 +68,7 @@ export class Api {
     this.server.use(express.urlencoded({ extended: false }));
     this.server.use(cookieParser());
     // UNCOMMENT WHEN
-    //this.server.use(csurf({ cookie: true }));
+    this.server.use(csurf({ cookie: true }));
     this.server.use(logger('completo'));
 
     this.server.use(
@@ -95,7 +96,7 @@ export class Api {
 
     this.server.use(
       session({
-        genid: () => uuid(), // usamos UUID para gerar os SESSID
+        genid: () => v4(), // usamos UUID para gerar os SESSID
         secret: 'Hi9Cf#mK98',
         resave: true,
         saveUninitialized: true,

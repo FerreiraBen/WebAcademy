@@ -38,7 +38,15 @@ export class Funcionarios extends Model {
   @Column({
     type: DataType.STRING,
   })
-  endereco!: string;
+  senha!: string;
+
+  // @AllowNull(false)
+  // @Column({
+  //   type: DataType.STRING,
+  // })
+  // endereco!: string;
+
+
 
   @AllowNull(false)
   @Unique
