@@ -2,6 +2,8 @@ import { log } from 'console';
 import { Request, Response } from 'express';
 import { Departamentos } from '../models/Departamentos';
 import { Funcionarios } from '../models/Funcionarios';
+import bcrypt from 'bcryptjs';
+
 
 
 const index = (req: Request, res: Response) => {
@@ -41,8 +43,19 @@ const signup = async (req: Request, res: Response) => {
   else {
     const funcionario = req.body;
     try{
-      await Funcionarios.create(funcionario);
-      res.redirect('/');
+      const rounds = parseInt(process.env.BCRYPT_ROUNDS!, 10);
+      bcrypt.genSalt(rounds, (err, salt) => {
+        bcrypt.hash(funcionario.senha, salt, async (err, hash) =>{
+          if(!err){
+            await Funcionarios.create({
+              ...funcionario,
+              senha: hash,
+            });
+            res.redirect('/');
+          }
+        })
+      });
+      
     } catch(e: any) {
       res.render('main/signup', {
         csrf: req.csrfToken(),
@@ -75,6 +88,9 @@ const logout = (req: Request, res: Response) => {
   res.clearCookie('logado');
   res.render('main/ui');
 };
+
+
+
 
 export default {
   index,
